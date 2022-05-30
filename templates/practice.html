@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+	<header>
+		<div class="title">
+			<h1>Wiki Search</h1>
+		</div>
+	</header>
+	
+	<section>
+		<div class="search-container">
+			<div class="search-bar">
+				<input type="text" placeholder="search here...">
+			</div>
+			<div class="search-but">
+				<a class="btn">search</a>
+			</div>
+		</div>
+	</section>
+	
+	<section>
+		<div>
+			<h1 id="count-num">0</h1>
+			<button  onclick="count_()">Increment</button>
+		</div>
+	</section>
+	
+	<footer></footer>
+	
+
+</body>
+
+<style type="text/css">
+		
+		*{	
+			box-sizing:border-box;
+			margin:0;
+			padding:0;		
+		}
+		
+		
+		
+		h1{
+			font-size:5em		
+			}
+		
+		body{
+			position:relative;
+			top:30vh;
+			background:#303030
+		}
+		
+		header{
+			position:relative;
+		}
+		
+		.title{
+			text-align:center;
+			margin:4em;
+			color:#16e0bd
+		}
+		
+		.search-container{
+			position:relative;
+			display:flex;
+			height:30ch;
+			background:#303030;
+			opacity:0.9;
+			margin:0 auto;
+			align-items:center;
+			width:70%;
+			justify-content:space-around;
+			border-radius:100px;
+			border:1px solid #16e0bd;
+			flex-flow:row wrap;
+		}
+		
+		::placeholder{
+			font-size:3em;
+			font-weight:900;
+			color:#16e0bd;
+			text-align:center
+		}
+		
+		.search-bar{
+			border-radius:1px;
+		}
+		
+		input{
+			height:20ch;
+			width:20vh;
+			background:#303030;
+			border:0;
+			outline:0	
+		}
+		
+		.search-but{
+			background:#303030;
+			text-align:center;
+			color:#16e0bd;	
+			font-size:2em		
+		}
+		
+</style>
+<script type="text/javascript" src="{{url_for('static',filename='index.js')}}"></script>
+</html>
