@@ -24,9 +24,9 @@
 		<nav class="nav" id="nav">
 			<ul class="nav__list">
 				<li class="nav__item"><a href="home" class="nav__link">Home</a></li>
-				<li class="nav__item"><a href="services" class="nav__link">Services</a></li>
+				<li class="nav__item"><a href="#services" class="nav__link">Skills</a></li>
 				<li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-				<li class="nav__item"><a href="#work" class="nav__link">My work</a></li>
+				<li class="nav__item"><a href="#work" class="nav__link">Personal Projects</a></li>
 
 			</ul>
 		</nav>
@@ -43,37 +43,82 @@
 		<img src="images/STEVE.png" alt="" class="intro__img">
 	</section>
 
-	<!--services-->
-	<section class="my-services" id="services">
-		<h2 class="section__title section__title--services">What I do</h2>
-		<div class="services">
-			<div class="service">
-				<h3>Implementing data structures and algorithms</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+	<section class="what-i-do">
+		<h2 class="section__title section__title--services" style="color: black;opacity: 0.7;">What I do</h2>
+		<div class="dos">
+			<div class="do">
+				<h3>Learning</h3>
+				<p>Learn new technology to expand my knowledge and tools for developing elegant and useful software.</p>
 			</div>
-			<div class="service">
-				<h3>Solving Problem</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+			<div class="do">
+				<h3>Implementing / Applying</h3>
+				<p>After understanding the theory, implement it using both dynamic and static type language to improve language comprehension.</p>
 			</div>
-			<div class="service">
-				<h3>Developing software</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+			<div class="do">
+				<h3>Debuging</h3>
+				<p>Approaching bugs systematically and occasionally using the bi-section method to take down the bug.</p>
 			</div>
 		</div>
-		<a class="btn" id="work">My work</a>
+	</section>
+
+
+	<!--services-->
+	<section class="my-services" id="services">
+		<h2 class="section__title section__title--services">technical skills</h2>
+		<div class="services">
+			<div class="service">
+				<img src = "images/python.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/django.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/c.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/javascript.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/html5.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/css3.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/sql.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/postgresql.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/mongodb.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/github.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/visual-studio-code.png" class = "skills_logo">
+			</div>
+			<div class="service">
+				<img src = "images/mac.png" class = "skills_logo">
+			</div>
+		</div>
 	</section>
 	<!-- about me  -->
 	<section class="about-me" id="about">
-		<h2 class="section__title section__title--about">Who I am</h2>
-		<p class="section__subtitle section__subtitle--about">Software Developer based out of Yangon dummy</p>
+		<h2 class="section__title section__title--about">Who am I</h2>
+		<p class="section__subtitle section__subtitle--about">Software Developer / Programmer</p>
 		<div class="about-me-body">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+			<h4>Hi I am Kyaw Zin Myat</h4>
+			<p>I'm a programmer, and I'm quite excited to implement algorithms and data structures and use them in my personal projects.</p>
 		</div>
-
 		<img src="images/STEVE2.png" alt="" class="about-me--img">
 
 	</section>
+
 
 	<!-- my works -->
 	<section class="my-works" id="work">
@@ -81,7 +126,7 @@
 		<!--<p class="section__subtitle section__subtitle--work">Selection of my range of work</p>-->
 
 		<div class="my-portfolio">
-			<a href="templates/maze.html" class="portfolio-item" id = "maze">
+			<a href="templates/maze.html" class="portfolio-item" id = "maze" target="_blank">
 				<div style = "position: relative;">
 					<h4 class = "card-header">Maze generator and solver</h4>				
 					<div class = "hidden-text">
@@ -95,7 +140,7 @@
 		
 			
 
-			<a href="https://simstockmarket.herokuapp.com/login" class="portfolio-item">
+			<a href="https://simstockmarket.herokuapp.com/login" target="_blank" class="portfolio-item">
 				<div style = "position: relative;">
 					<h4 class = "card-header">Stock market Simulator</h4>
 					<div class = "hidden-text">
@@ -108,7 +153,7 @@
 				<img src="images/real stock.png" alt="" class="portfolio__image">
 			</a>
 
-			<a href="homepage/index.html" class="portfolio-item">
+			<a href="homepage/index.html" class="portfolio-item" target="_blank"> 
 				<div style = "position: relative;">
 					<h4 class = "card-header">Sorting Visualizations</h4>
 					<div class = "hidden-text">
@@ -120,7 +165,7 @@
 				<img src="images/sortings.png" alt="" class="portfolio__image">
 			</a>
 
-			<a href="homepage/index.html" class="portfolio-item">
+			<a target="_blank" href="homepage/index.html" class="portfolio-item">
 				<div style = "position: relative;">
 					<h4 class = "card-header">Search Engine (WIKI)</h4>
 					<div class = "hidden-text">
@@ -142,19 +187,24 @@
 		<a href="kyawzinmyat00000001@gmail.com" class="footer__link">kyawzinmyat</a>
 		<ul class="social-lists">
 			<li class="social-lists-item">
-				<a href="#" class="social-lists__link"><i class="fa-brands fa-github"></i></a>
+				<a target="_blank" href="#" class="social-lists__link"><i class="fa-brands fa-github"></i></a>
 			</li>
 			<li class="social-lists-item">
-				<a href="#" class="social-lists__link"><i class="fa-solid fa-envelope"></i></a>
+				<a target="_blank" href="#" class="social-lists__link"><i class="fa-solid fa-envelope"></i></a>
 			</li>
 			<li class="social-lists-item">
-				<a href="#" class="social-lists__link"><i class="fa-solid fa-phone"></i></a>
+				<a target="_blank" href="phone_error.html" class="social-lists__link"><i class="fa-solid fa-phone"></i></a>
 			</li>
 			<li class="social-lists-item">
-				<a href="#" class="social-lists__link"><i class="fa-brands fa-facebook"></i></a>
+				<a target="_blank" href="fb_error.html" class="social-lists__link"><i class="fa-brands fa-facebook"></i></a>
 			</li>
 		</ul>
 	</footer>
+
+	<section class="about-web" id="about-web">
+		<h4>I'm not very good at web design, so the portfolio web page is based on a video uploaded to YouTube by Kevin Powell. The web page was not entirely created from the video, but I did include my own custom design and components.</h4>
+	</section>
+
 	<script src="templates/index.js"></script>
 	<script src="https://kit.fontawesome.com/9fbd87ea8b.js" crossorigin="anonymous"></script>
 </body>
