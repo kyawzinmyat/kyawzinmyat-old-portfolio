@@ -1,0 +1,61 @@
+
+
+
+.maze-header
+{
+    font-size: 1em;
+    background: aquamarine;
+    height: 200px;
+    padding: 6em 0;
+}
+
+.header{
+    text-align: center;
+}
+
+.body
+{
+    color : black;
+}
+body  p
+{
+    font-size: 2em;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color:grey;
+}
+
+
+.footer
+{
+    background-color: black;
+    color:#fff;
+    text-align: center;
+    height: auto;
+    opacity: 0.8;
+}
+
+.wrapper
+{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top:25px;
+    height:0px
+}
+
+.wrapper iframe
+{
+    position : absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    height:100%;
+    width:100%;
+}
