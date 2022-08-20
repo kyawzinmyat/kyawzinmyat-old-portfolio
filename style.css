@@ -319,6 +319,7 @@ img {
 		position: relative;
 		grid-area: image;
 		z-index: 5;
+		background: whitesmoke;
 	}
 
 	.section__subtitle--about {
@@ -449,7 +450,7 @@ header {
 
 .nav__link {
 	color: inherit;
-	font-size: var(--fs-h1);
+	font-size: var(--fs-h4);
 	font-weight: var(--fw-bold);
 	text-decoration: none;
 }
@@ -641,4 +642,13 @@ a:hover {
 	width:10px;
 	margin: 0 auto;
 	background-color: #00ffff;
+}
+
+.certi{
+	text-align: center;
+	text-decoration: none;
+}
+
+.certi > a{
+	color:rgb(98, 33, 33)
 }
