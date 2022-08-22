@@ -59,6 +59,7 @@ var called = false;
 
 function start(event) {
     if (!called) {
+        reset_boxes();
         selection_sort([...test]);
         called = true;
     }
@@ -82,15 +83,13 @@ function add(event) {
     var num = document.getElementById("num");
     test = Array.from({length: parseInt(num.value)}, () => Math.floor(Math.random() * 50));
     de = ((test.length) + 1 / test.length) / 10;
+    reset_boxes()
     num.value = "";
 }
 
 
 function restart() {
-    var box = document.getElementById("box");
-    while (box.lastChild) {
-        box.lastChild.remove();
-    }
+    reset_boxes()
     selection_sort([...test]);
 }
 
@@ -118,6 +117,12 @@ function make_box(array) {
         border: 1px solid white">${j}</p>`;
         j = "";
     }
+}
+
+function reset_boxes()
+{
+    var box = document.getElementById("box");
+    box.innerHTML = '';
 }
 
 var de = ((test.length) + 1 / test.length) / test.length;

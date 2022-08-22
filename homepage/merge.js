@@ -1,78 +1,49 @@
-async function merge(left, right, start, end) {
+async function merge(left, right) {
     var l = 0;
     var r = 0;
     var result = [];
-    var current;
-    var next;
-
-
     while (l < left.length && r < right.length) {
         if (left[l] < right[r]) {
             result.push(left[l]);
-            next = start + l;
             l += 1;
-            current = start + r;
         }
         else {
             result.push(right[r]);
-            next = start + r;
             r += 1;
-            current = start + l;
         }
-        await draw_test(current, next);
     }
 
     while (r < right.length) {
         result.push(right[r]);
-        await draw_test(start + r);
         r += 1
     }
 
     while (l < left.length) {
         result.push(left[l]);
-        await draw_test(start + l);
         l += 1;
     }
     return result;
 }
 
 
-var ani = [];
 
-
-async function draw_test(c, n)
-{
-    if (n)
-    {
-        var current = document.getElementById(suffix + n);
-        current.style.backgroundColor = "yellow";
-        await delay(de / 10);
-        current.style.backgroundColor = "#00FFFF";
-
-    }
-    if (c)
-    {
-        var next = document.getElementById(suffix + c);
-        next.style.backgroundColor = "orange";
-        await delay(de / 10);
-        next.style.backgroundColor = "#00FFFF";
-    }
-}
 
 async function draw_test2(s, e, result)
 {
-    for (var i = 0; i + s < e; i ++)
+    for (var i = s; i < e; i ++)
     {
-        var box = document.getElementById(suffix + (i + s));
-        var next = document.getElementsByClassName(`${result[i]}`);
-        box.style.backgroundColor = "#00FFFF";
+        var box = document.getElementById(suffix + i);
+        //var next = document.getElementsByClassName(`${result[i]}`);
+        box.style.backgroundColor = "#00ffff";
         var b_h = box.style.height;
-        await delay(de);
-        box.style.height = `${result[i] * 0.8}em`;
-        next[0].style.backgroundColor = "#00ffff";
-        next[0].style.height = `${b_h}em`;
+        await delay(de/12000);
+        box.style.height = `${result[i - s] * 0.8}em`;
     }
 }
+
+
+
+
 
 
 
@@ -88,14 +59,15 @@ async function delay(delayInms) {
 
 
 async function sort(array, start, end) {
+    console.log(array)
     if (array.length > 1) {
         while(!start_)
         {
             await delay(1);
         }
-        var middle = Math.round(array.length / 2);
-        var right = await sort(array.slice(middle, array.length), middle, array.length);
-        var left = await sort(array.slice(0, middle), 0, middle);
+        var middle = Math.round((array.length) / 2);
+        var left = await sort(array.slice(0, middle), start, middle);
+        var right = await sort(array.slice(middle, array.length), middle, end);
         result = await merge(left, right, start, end);
         await draw_test2(start, end, result);
         return result;
@@ -104,8 +76,8 @@ async function sort(array, start, end) {
 }
 
 function start_sort(test) {
-    make_box([...test]);
-    sort([...test], 0 , test.length);
+    make_box(test);
+    sort(test, 0 , test.length);
 }
 
 var max_height = 20;
@@ -140,6 +112,7 @@ var stop_ = false;
 var called = false;
 
 function start(event) {
+    reset_boxes();
     if (!called) {
         start_sort([...test]);
         called = true;
@@ -166,17 +139,21 @@ function add(event) {
     test = Array.from({length: parseInt(num.value)}, () => Math.floor(Math.random() * 50));
     de = ((test.length) + 1 / test.length) / 10;
     num.value = "";
+    reset_boxes();
 }
 
 
 function restart() {
-    var box = document.getElementById("box");
-    while (box.lastChild) {
-        box.lastChild.remove();
-    }
-    start_sort([...test], 0, test.length);
+    reset_boxes()
+    start_sort([...test])
 }
 
+
+function reset_boxes()
+{
+    var box = document.getElementById("box");
+    box.innerHTML = '';
+}
 
 
 var length = 50;

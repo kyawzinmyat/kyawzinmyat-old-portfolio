@@ -13,7 +13,7 @@ var width;
 var max_height = 20;
 
 async function insertion_sort(array) {
-    make_box([...test]);
+    make_box(array);
     for (var i = 0; i < array.length; i++) {
         for (var j = i + 1; j < array.length; j++) {
             while (!start_)
@@ -34,8 +34,6 @@ async function insertion_sort(array) {
                 next.style.backgroundColor = "#00ffff";
                 current.style.height = `${array[i] * 0.8}em`;
                 next.style.height = `${array[j] * 0.8}em`;
-                next.innerHTML = array[j];
-                current.innerHTML = array[i];
             }
         }
     }
@@ -56,8 +54,9 @@ var start_ = false;
 var stop_ = false;
 var called = false;
 
-function start(event) {
+function start() {
     if (!called) {
+        reset_boxes()
         insertion_sort([...test]);
         called = true;
     }
@@ -83,16 +82,21 @@ function add(event) {
     var num = document.getElementById("num");
     test = Array.from({length: parseInt(num.value)}, () => Math.floor(Math.random() * 50));
     de = ((test.length) + 1 / test.length) / 10;
+    reset_boxes()
     num.value = "";
 }
 
 
 function restart() {
-    var box = document.getElementById("box");
-    while (box.lastChild) {
-        box.lastChild.remove();
-    }
+    reset_boxes();
     insertion_sort([...test]);
+}
+
+
+function reset_boxes()
+{
+    var box = document.getElementById("box");
+    box.innerHTML = '';
 }
 
 var p = false;
@@ -116,7 +120,7 @@ function make_box(array) {
         }
         box.innerHTML += `<p id = index_${i} style = "width:${width}%;
         height: ${max_height}em; background-color: #00ffff; color:white;
-        border: 1px solid white">${j}</p>`;
+        border: 1px solid white"></p>`;
         j = "";
     }
 }

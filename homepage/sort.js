@@ -14,8 +14,7 @@ var width;
 var max_height = 20;
 
 async function bubble_sort(array) {
-    make_box([...test]);
-
+    make_box(array);
     var counter = -1;
     while (counter != 0) {
         counter = 0;
@@ -36,10 +35,6 @@ async function bubble_sort(array) {
                 counter += 1;
                 current.style.height = `${array[i] * 0.8}em`;
                 next.style.height = `${array[i + 1] * 0.8}em`;
-                if (p) {
-                    next.innerHTML = array[i + 1];
-                    current.innerHTML = array[i];
-                }
             }
             current.style.backgroundColor = "#00ffff";
             next.style.backgroundColor = "#00ffff";
@@ -64,6 +59,7 @@ var called = false;
 
 function start(event) {
     if (!called) {
+        reset_boxes();
         bubble_sort([...test]);
         called = true;
     }
@@ -88,14 +84,12 @@ function add(event) {
     test = Array.from({length: parseInt(num.value)}, () => Math.floor(Math.random() * 50));
     de = ((test.length) + 1 / test.length) / test.lenght;
     num.value = "";
+    reset_boxes();
 }
 
 
 function restart() {
-    var box = document.getElementById("box");
-    while (box.lastChild) {
-        box.lastChild.remove();
-    }
+    reset_boxes();
     bubble_sort([...test]);
 }
 
@@ -120,9 +114,16 @@ function make_box(array) {
         }
         box.innerHTML += `<p id = index_${i} style = "width:${width}%;
         height: ${max_height}em; background-color: black; color:white;
-        border: 1px solid white">${j}</p>`;
+        border: 1px solid white"></p>`;
         j = "";
     }
 }
 
 de = ((test.length) + 1 / test.length) / test.lenght;
+
+
+function reset_boxes()
+{
+    var box = document.getElementById("box");
+    box.innerHTML = '';
+}

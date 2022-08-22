@@ -7,11 +7,50 @@
     <title>Sieve of Eratosthenes</title>
 </head>
 <body>
-    <div style = "width:100%">
-        <div id = "boxes" style = "display: flex; flex: 1 auto;">
+    <form method = "POST">
+        <input type = "number" placeholder="Limit">
+        <button onclick="init_box(event)">Generate</button>
+    </form>
+    <div >
+        <div id = "boxes" style = "display: flex; flex-wrap: wrap;width:90%; height:auto;margin: 0 auto;">
 
         </div>
     </div>  
     <script src = "soe.js"></script>
+
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+        }
+
+        form{
+            width: 30%;
+            margin:0 auto;
+            display: flex;
+            margin-top: 1em;
+        }
+        form > input{
+            width:50%;
+            margin: 0 auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            height: 50px;
+        }
+
+        form > button
+        {
+            width:30%;
+            height: 30px;
+            border-radius: 20px;
+            margin-top: 1.4em;
+            border: 1px solid white;
+        }
+    </style>
 </body>
 </html>

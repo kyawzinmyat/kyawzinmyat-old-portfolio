@@ -9,26 +9,50 @@ body
     background-color: rgb(21, 19, 16);
 }
 
+
+.hidden-text
+{
+    display: none;
+}
+
+
+
+
+
+
+
 #nav-stack > a
 {
-    width:100%;
-    height:100px;
+    width:70%;
+    height:250%;
     padding-top:1.5em;
     background-color: black;
     opacity: 0.9;
     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.15em 0.15em 0.25em rgba(0, 0, 0, 0.25);
     font-size: large;
- 
+    transition: transform 1s ease-in-out;
 }
+
+#nav-stack > a:last-child:hover, #nav-stack > a:nth-last-child(2):hover,#nav-stack > a:nth-last-child(3):hover
+{
+    background-color: rgba(0, 0, 0, 0.25);
+    transform: translateX(500px) translateY(-200px);
+}
+
+
 #nav-stack > a:hover > p
 {
     background-color: rgba(0, 0, 0, 0.25);
+    display: block;
 }
 
 #nav-stack > a:hover
 {
     background-color: rgba(0, 0, 0, 0.25);
+    transform: translateX(500px) translateY(100px);
 }
+
+
 
 
 #nav-stack > a > p{
@@ -38,12 +62,13 @@ body
 }
 
 #nav-stack > a:nth-child(2n + 1){
-    animation: left-right 8s ease-in-out forwards alternate;
+    animation: left-right 8s ease-in-out backwards;
 }
 
 #nav-stack > a:nth-child(2n){
-    animation: right-left 8s ease-in-out forwards alternate;
+    animation: right-left 8s ease-in-out backwards;
 }
+
 
 
 
