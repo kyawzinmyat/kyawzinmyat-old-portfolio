@@ -12,24 +12,38 @@
 <body>
     <header class="maze-header">
         <h1 class="header">Maze generating program that uses randomized DFS(depth first search)</h1>
+        <h1 class="header">A program to illustrate how searching algorithms including</h1>
+        <ul style = "text-align: center; list-style: none; font-size: 2em;">
+            <li></li>Depth First Search</li>
+            <li>Breadth First Search</li>
+            <li>Greedy Best First Search</li>
+            <li>A* Search</li>
+        </ul>
+        <h1 class="header">Find a path and how different algorithms yield the results (the path)</h1>
     </header>
     <main class="body">
-        <p>The program uses randomized DFS to generate a 2D maze and both DFS and BFS to find a path˜</p>
         <p>Currently the web version is unavaliable</p>
         <p>If you wanna try it on your machine</p>
         <li>
             <p>Clone the
                 <a href="https://github.com/kyawzinmyat/mazeGen">Git Hub repository</a>
             </p>
+            <p class = "instructions">$git clone https://github.com/kyawzinmyat/mazeGen</p>
         </li>
         <li>
             <p>
                 Install pygame
             </p>
+            <p class = "instructions">
+                $pip3 install pygame
+            </p>
         </li>
         <li>
             <p>
                 Run game.py file
+            </p>
+            <p class = "instructions">
+                $python3 game.py
             </p>
         </li>
     </main>
@@ -41,7 +55,14 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
 
-        <p>That is all!</p>
+    </footer>
+
+    <footer class = "footer2">
+        <h1>Conclusion</h1>
+        <p>You can compare how different algorithms produce the path by checking the path length</p>
+        <p>You can also differentiate how DFS and BFS (uninformed search) take steps to get the path</p>
+        <p>You can also see how Greedy Best First Search yields a path but not the best or optimized one</p>
+        <p>Also the length of the path produced from BFS and A* search</p>
     </footer>
 </body>
 

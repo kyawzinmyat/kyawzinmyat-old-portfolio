@@ -5,7 +5,7 @@
 {
     font-size: 1em;
     background: aquamarine;
-    height: 200px;
+    height: auto;
     padding: 6em 0;
 }
 
@@ -15,12 +15,25 @@
 
 .body
 {
-    color : black;
+    padding:1em;
+    background-color : whitesmoke;
 }
+
 body  p
 {
     font-size: 2em;
     text-align: center;
+}
+
+
+.instructions
+{
+    background: black;
+    color:white;
+    opacity: 0.8;
+    width:50%;
+    padding:1em;
+    margin: 0 auto;
 }
 
 a{
@@ -39,6 +52,18 @@ a:hover{
     text-align: center;
     height: auto;
     opacity: 0.8;
+}
+
+.footer2
+{   
+    background-color: blue;
+    color:#fff;
+    padding:1em;
+    margin-top:2em;
+    margin-bottom: 2em;
+    text-align: center;
+    height: auto;
+    opacity: 0.4;
 }
 
 .wrapper
